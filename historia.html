@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia</title>
     <style>
-        body {
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       background-color: #cfde7d;
       background-size: cover;
       background-repeat: no-repeat;
@@ -15,34 +21,147 @@
       color: #000;
       padding: 1rem;
     }
+
+    header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    header img {
+      width: 300px;
+      height: auto;
+    }
+
+    .barras {
+      display: flex;
+      justify-content: flex-end;
+      margin: 1rem;
+    }
+
+    button {
+      background-color: whitesmoke;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .desplegable {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #fbebe7;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      padding: 1rem;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    }
+
+    .menu {
+      list-style: none;
+      padding: 0;
+    }
+
+    .menu li {
+      margin: 20px 0;
+    }
+
+    .menu a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: auto;
+      margin-top: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      margin: 0.5rem 0;
+    }
+
+    hr {
+      margin: 2rem 0;
+      border: 1px solid #00c;
+    }
+
+    @media (max-width: 768px) {
+      .desplegable {
+        width: 100%;
+      }
+      main {
+        font-size: 1rem;
+      }
+    }
     </style>
 </head>
 <body>
 
-    <a href="index.html"><img src="regre.png" width="60" height="50"></a>
+   <div class="barras">
+      <button onclick="abrir_menu()" id="btnAbrir">☰</button>
+    </div>
+  
+    <div class="desplegable" id="menu">
+      <button onclick="cerrar_menu()" id="btnCerrar">✖</button>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="contacto2.html">Contacto</a></li>
+      </ul>
+    </div>
 
 
         <center>
-            <h2>Nuestra Historia</h2>
+            <h2>Nuestra Historia</h2><br>
 
         <p><h4>Pollo Campero nace en Guatemala en 1971 y un año después inicia operaciones en El Salvador,
            liderado por Don Juan Bautista Gutiérrez, y en compañía de su hijo Dionisio, quien fue nombrado Presidente del negocio.
            Unidos crean un nuevo concepto de sabor: un pollo tierno, jugoso y crujiente; 
-           tres adjetivos que desde ese momento están asociados inseparablemente a la marca Pollo Campero.</h4></p>
+           tres adjetivos que desde ese momento están asociados inseparablemente a la marca Pollo Campero.</h4></p><br><br>
 
-        <p><h4>En la década de los noventa, Pollo Campero inicia su proceso de expansión global, con su crecimiento en Latinoamérica.</h4></p>
+        <p><h4>En la década de los noventa, Pollo Campero inicia su proceso de expansión global, con su crecimiento en Latinoamérica.</h4></p><br><br>
 
         <p><h4>En el 2002 Pollo Campero ingresa a Estados Unidos y logra con una aceptación inmediata; 
-           las primeras aperturas llegan a romper récords de venta en la industria.</h4></p>
+           las primeras aperturas llegan a romper récords de venta en la industria.</h4></p><br><br>
 
         <p><h4>Al liderazgo en Latinoamérica y expansión por Estados Unidos se añade el ingreso a  los mercados de
            Europa y Asia con las aperturas de restaurantes Pollo Campero en España (2006), China e Indonesia (2007)
-           y próximamente Oriente Medio e India.</h4></p>
+           y próximamente Oriente Medio e India.</h4></p><br><br>
 
         <p><h4>Presente en 12 países alrededor del mundo, Pollo Campero sirve a más de 80 millones de clientes cada año
-           a través de una red de más de 300 restaurantes.</h4></p> 
-           
+           a través de una red de más de 300 restaurantes.</h4></p>  
         </center>
+
+
+        <script>
+         function abrir_menu() {
+           document.getElementById("menu").style.transform = "translateX(0)";
+         }
+         function cerrar_menu() {
+           document.getElementById("menu").style.transform = "translateX(-100%)";
+         }
+       </script>
     
 </body>
 </html>
